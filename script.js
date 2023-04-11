@@ -431,12 +431,70 @@ const videoElm = document.querySelector('video');
 videoElm.removeAttribute('controls');
 const prehravacElm = document.querySelector('#prehravac');
 
+const playElm = document.querySelector('.play');
+
+// const play = () => {
+// 	console.log('play');
+// 	videoElm.play();
+// }
+
+/****************************************************************/
+
 const play = () => {
 	console.log('play');
 	videoElm.play();
+	let setTime = 1000;
+	
+	const toggle = () => {
+		const playerControlsElm = document.querySelector('.player-controls');
+		
+		console.log('Run: ' + setTime);
+
+		if (setTime >= 3000) {
+			console.log('Set Run: ' + setTime);
+			playerControlsElm.classList.add('hidden');
+			console.log('hidden class');
+
+			const process = (event) => {
+				console.log('Event Run: ' + setTime);
+				setTime = 1000;
+				if (event.type === 'mousemove' || event.type === 'keydown') {
+					playerControlsElm.classList.remove('hidden');
+					console.log('visible class');
+					clearInterval(resetPocitej);
+				}
+			}
+	
+			document.addEventListener('keydown', process);
+			document.addEventListener('mousemove', process);
+		}
+		setTime+=1000;
+	}
+	let resetPocitej = setInterval(toggle, setTime);
 }
 
-prehravacElm.addEventListener('click', play);
+/****************************************************************/
+
+playElm.addEventListener('click', play);
+
+const playPauseKey = (event) => {
+	if (
+		event.code === 'Space' &&
+		event.target.tagName !== 'TEXTAREA' &&
+		event.target.tagName !== 'INPUT' &&
+		event.target.tagName !== 'BUTTON'
+	) {
+		if (prehravacElm.classList.contains('playing')) {
+			videoElm.pause();
+			prehravacElm.classList.remove('playing');
+		} else {
+			videoElm.play();
+			prehravacElm.classList.add('playing');
+		}
+	}
+}
+
+document.addEventListener('keydown', playPauseKey);
 
 const replaying = () => {
 	prehravacElm.classList.add('playing');

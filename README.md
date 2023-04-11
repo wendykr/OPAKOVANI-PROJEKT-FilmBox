@@ -33,6 +33,7 @@ Bonus
 Změňte ikonku tlačítka na křížek, pokud je menu rozbalené a na hamburger, pokud je sbalené.
 - HTML ikonky křížku: `<i class="fas fa-xmark"></i>`
 - HTML ikonky hamburgeru: `<i class="fas fa-bars"></i>`
+
 ![ukázka výsledku](https://kodim.cz/cms/assets/kurzy/javascript-vyuka/js-1/filmbox/projekt/cvlekce%3Ehamburger-menu/reseni.gif)
 
 
@@ -62,7 +63,8 @@ Na stránce se seznamem filmů vypište karty se všemi filmy z pole `filmy`.
 </div>
 ```
 
-- Vzhledem k tomu, že `script.js` se používá i na podstránkách bez seznamu filmů, bez prvku `#seznam-filmu`, může se stát, že váš kód bude zobrazovat chybu ve vývojářských nástrojích například na detailu `film.html`. Obalte váš kód tedy podmínkou, ať se pouští pouze v případě, že se v HTML aktuální stránky `#seznam-filmu` nachází.
+- Vzhledem k tomu, že `script.js` se používá i na podstránkách bez seznamu filmů, bez prvku `#seznam-filmu`, může se stát, že váš kód bude zobrazovat chybu ve vývojářských nástrojích například na detailu `film.html`. Obalte váš kód tedy podmínkou, ať se pouští pouze v případě, že se v HTML aktuální stránky `#seznam-filmu` nachází. 
+
 ![ukázka výsledku](https://kodim.cz/cms/assets/kurzy/javascript-vyuka/js-1/filmbox/projekt/cvlekce%3Eseznam-filmu/reseni.jpg)
 
 # Bonus
@@ -78,7 +80,8 @@ Zobrazte příslušné informace o filmu na stránce s detailem.
 - Najděte prvek s id `detail-filmu` a zařiďte, aby se následující kód vykonal, pouze pokud je prvek přítomen.
 - Zjistěte, na film s jakým `id` se uživatel chce dívat kódem `location.hash`. Všimněte si, že hodnota vlastnosti `hash` začíná znakem mřížky (`#`). Id v poli `filmy` mřížkou nezačínají. Mřížku vhodnou metodou na řetězcích odřízněte. Není potřeba. Je spíš na škodu.
 - Cyklem prohledejte pole `filmy` a film se stejným id si poznamenejte do proměnné.
-- Vepište informace (název, popis, plakát) o nalezeném filmu do stránky. Upravte textový obsah a atributy příslušných potomků prvku `#detail-filmu`. Do `.card-text` vepište dlouhý popis filmu.
+- Vepište informace (název, popis, plakát) o nalezeném filmu do stránky. Upravte textový obsah a atributy příslušných potomků prvku `#detail-filmu`. Do `.card-text` vepište dlouhý popis filmu. 
+
 ![ukázka výsledku](https://kodim.cz/cms/assets/kurzy/javascript-vyuka/js-1/filmbox/projekt/cvlekce%3Edetail-filmu/reseni.jpg)
 
 
@@ -119,7 +122,8 @@ Při přejíždění myší přes hvězdičky zvýrazněte všechny až po tu, n
 - Kromě posluchače události na kliknutí přidejte i posluchač na `mouseenter` a opět podle textového obsahu hvězdičky zavolejte vaši funkci s příslušným parametrem.
 - Pokud uživatel s myší odjede pryč, zvýrazněte hvězdičky zpět tak, jak byly po posledním kliknutí.
   - Kdykoliv uživatel na nějakou hvězdičku klikne, poznamenejte si bokem, kolikátá to byla.
-  - S událostí `mouseleave` zavolejte vaši funkci s poznamenanou hodnotou.
+  - S událostí `mouseleave` zavolejte vaši funkci s poznamenanou hodnotou. 
+
 ![ukázka výsledku](https://kodim.cz/cms/assets/kurzy/javascript-vyuka/js-1/filmbox/projekt/cvlekce%3Ehodnoceni/reseni.gif)
 
 
@@ -133,7 +137,8 @@ Umožněte uživateli vyplněním formuláře přidat k filmu vlastní poznámku
 
 # Bonus
 Pokud uživatel něco ve formuláři vynechal, pomozte mu zaměřením příslušného formulářového prvku.
-- V místech, kde přidáváte třídu `is-invalid`, volejte také na formulářovém prvku metodu `.focus()`. Ta například u textového pole přenese kurzor pro psaní rovnou na správné místo, aby uživatel mohl začít psát z klávesnice.
+- V místech, kde přidáváte třídu `is-invalid`, volejte také na formulářovém prvku metodu `.focus()`. Ta například u textového pole přenese kurzor pro psaní rovnou na správné místo, aby uživatel mohl začít psát z klávesnice. 
+
 ![ukázka výsledku](https://kodim.cz/cms/assets/kurzy/javascript-vyuka/js-1/filmbox/projekt/cvlekce%3Epoznamka/reseni.gif)
 
 
@@ -167,5 +172,6 @@ if (
 ```
 
 # Extra bonus
-Skryjte ovládací panel, pokud uživatel po dobu **tří sekund** nepohnul myší ani nestiskl žádnou klávesu. **Využijte časovač**. S každým pohnutím nebo stiskem ho zrušte a nastavte znovu na tři sekundy. Po uplynutí přidejte prvku `.player-controls` třídu `hidden`. Pro opětovné zobrazení (s každým pohybem, stiskem) třídu `hidden` zase odeberte, aby se ovládání zpět objevilo.
+Skryjte ovládací panel, pokud uživatel po dobu **tří sekund** nepohnul myší ani nestiskl žádnou klávesu. **Využijte časovač**. S každým pohnutím nebo stiskem ho zrušte a nastavte znovu na tři sekundy. Po uplynutí přidejte prvku `.player-controls` třídu `hidden`. Pro opětovné zobrazení (s každým pohybem, stiskem) třídu `hidden` zase odeberte, aby se ovládání zpět objevilo. 
+
 ![ukázka výsledku](https://kodim.cz/cms/assets/kurzy/javascript-vyuka/js-1/filmbox/projekt/cvlekce%3Eprehravac/reseni.gif)
