@@ -433,47 +433,25 @@ const prehravacElm = document.querySelector('#prehravac');
 
 const playElm = document.querySelector('.play');
 
-// const play = () => {
-// 	console.log('play');
-// 	videoElm.play();
-// }
-
-/****************************************************************/
-
 const play = () => {
 	console.log('play');
 	videoElm.play();
-	let setTime = 1000;
-	
-	const toggle = () => {
-		const playerControlsElm = document.querySelector('.player-controls');
-		
-		console.log('Run: ' + setTime);
-
-		if (setTime >= 3000) {
-			console.log('Set Run: ' + setTime);
-			playerControlsElm.classList.add('hidden');
-			console.log('hidden class');
-
-			const process = (event) => {
-				console.log('Event Run: ' + setTime);
-				setTime = 1000;
-				if (event.type === 'mousemove' || event.type === 'keydown') {
-					playerControlsElm.classList.remove('hidden');
-					console.log('visible class');
-					clearInterval(resetPocitej);
-				}
-			}
-	
-			document.addEventListener('keydown', process);
-			document.addEventListener('mousemove', process);
-		}
-		setTime+=1000;
-	}
-	let resetPocitej = setInterval(toggle, setTime);
 }
 
-/****************************************************************/
+const playerControlsElm = document.querySelector('.player-controls');
+
+const visible = () => {
+	clearTimeout(setTimeout(hidden, 3000));
+	setTimeout(hidden, 3000);
+	playerControlsElm.classList.remove('hidden');
+}
+
+const hidden = () => {
+	playerControlsElm.classList.add('hidden');
+}
+
+document.addEventListener('keydown', visible);
+document.addEventListener('mousemove', visible);
 
 playElm.addEventListener('click', play);
 
@@ -504,12 +482,12 @@ videoElm.addEventListener('playing', replaying);
 
 const pauseElm = document.querySelector('.pause');
 
-const pause = () => {
+const pauseClick = () => {
 	console.log('pause');
 	videoElm.pause();
 }
 
-pauseElm.addEventListener('click', pause);
+pauseElm.addEventListener('click', pauseClick);
 
 const stop = () => {
 	console.log('remove playing');
